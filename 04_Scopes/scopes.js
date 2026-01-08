@@ -1,13 +1,20 @@
 console.log("Scopes in JS");
-//Scope defines the accessbility of the functions and varibles based on thier location in the source code
+//Scope defines the accessbility of the functions and varibles based on thier
+// location in the source code
+
 //1. Global Scope => when a variable is defined outside the fuvtion or block it has a global scope
 //we can access these variables from anywhere.
 
-let name = "Manoj"; //global Scope
+let firstName = "Manoj"; //global Scope
 function greet() {
-  console.log(name);
+  console.log(firstName);
 }
-console.log(name);
+const sample = {
+  firstName: firstName,
+};
+console.log(sample);
+
+console.log(firstName);
 greet();
 
 //2. local
@@ -15,8 +22,8 @@ function sayHello() {
   let userName = "Swapana"; //local scope
   console.log(userName);
 }
-//console.log(userName);
-// sayHello();
+// console.log(userName);
+sayHello();
 
 //3. Nested Scope
 function outer() {
@@ -44,3 +51,9 @@ if (true) {
 for (let i = 1; i <= 5; i++) {
   console.log(i);
 }
+// let , const
+if (true) {
+  var b = 100; //=> local scope
+  console.log(b);
+}
+console.log(b);
