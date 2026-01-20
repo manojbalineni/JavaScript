@@ -194,13 +194,15 @@ console.log(nested.flat());
 const c = [1, 2, [3, 4, [5, 6]], 7, 8]; //1,2,3,4,Array(2),7,8
 console.log(c.flat(2));
 
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [11, 12, 13, 14, 15];
+// 11 12  13  14  15
+// 0  1    2   3   4 => [14, 15]
+// [14 , 15 , 13, 14, 15]
 
 // Copy elements from index 3 (value 4) to index 0.
 numbers.copyWithin(0, 3);
 
 console.log(numbers);
-// Expected output: [4, 5, 3, 4, 5]
 
 const laptops = ["dell", "hp", "acer", "asus", "lenovo"];
 
@@ -212,10 +214,12 @@ console.log(laptops);
 // Expected output: ['acer', 'asus', 'acer', 'asus', 'lenovo']
 
 const fruitsObject = [
-  { s: "banana", price: 8 },
-  { s: "apple", price: 10 },
-  { s: "orange", price: 12 },
+  { name: "banana", price: 8 },
+  { name: "apple", price: 10 },
+  { name: "orange", price: 12 },
 ];
 
-fruitsObject.sort((x, y) => fruitsObject.s.localeCompare(y.s));
+fruitsObject.sort((x, y) => x.price - y.price);
+
+fruitsObject.sort((x, y) => x.name.localeCompare(y.name)); // Alphabetical Order
 console.log(fruitsObject);

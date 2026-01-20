@@ -5,4 +5,5 @@ Topics for JavaScript :
 3. Objects in JS
 4. Scopes in JS
 5. Arrays in JS
-6.
+6. Set Time Out and Set Interval
+7. Rest and Spread operators
